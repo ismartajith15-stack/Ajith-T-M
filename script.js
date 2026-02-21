@@ -139,10 +139,8 @@ if (animToggle) {
 
 });
 const navToggle = document.getElementById("nav-toggle");
-const navbar = document.querySelector(".navbar");
-const mainContent = document.querySelector("main");
+const navLinks = document.querySelector(".nav-links");
 
 navToggle.addEventListener("click", () => {
-  navbar.classList.toggle("show");
-  mainContent.classList.toggle("shift");  // push content
+  navLinks.classList.toggle("show");
 });
