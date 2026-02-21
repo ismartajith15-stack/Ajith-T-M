@@ -362,23 +362,44 @@ body.no-anim .skill-fill {
 .piece-1 { transition-delay: 0.2s; }
 .piece-2 { transition-delay: 0.5s; }
 .piece-3 { transition-delay: 0.8s; }
-.nav-links {
-  display: flex;        /* default for desktop */
-  flex-direction: column;
-}
+@media (max-width: 900px) {
 
-@media(max-width: 900px) {
-  .nav-links {
-    display: none;      /* hide menu initially on mobile */
+  body {
     flex-direction: column;
-    width: 100%;
-    background: rgba(0,0,0,0.9);
-    position: absolute;
-    top: 60px;         /* below navbar */
-    left: 0;
+    position: relative;
   }
 
-  .nav-links.show {
-    display: flex;      /* show menu when toggled */
+  .navbar {
+    position: fixed;
+    left: -220px;           /* hide navbar initially offscreen */
+    top: 0;
+    width: 220px;
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 30px;
+    transition: left 0.3s ease;
+    z-index: 200;           /* above main content */
+  }
+
+  .navbar.show {
+    left: 0;                /* slide in navbar */
+  }
+
+  main {
+    margin-left: 0;         /* remove fixed margin for mobile */
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+  }
+
+  main.shift {
+    margin-left: 220px;     /* push content when navbar is open */
+  }
+
+  #nav-toggle {
+    position: fixed;
+    left: 10px;
+    top: 15px;
+    z-index: 300;           /* above everything */
   }
 }
