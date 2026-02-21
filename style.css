@@ -362,44 +362,41 @@ body.no-anim .skill-fill {
 .piece-1 { transition-delay: 0.2s; }
 .piece-2 { transition-delay: 0.5s; }
 .piece-3 { transition-delay: 0.8s; }
+/* Mobile Styles */
 @media (max-width: 900px) {
 
   body {
     flex-direction: column;
-    position: relative;
   }
 
   .navbar {
-    position: fixed;
-    left: -220px;           /* hide navbar initially offscreen */
-    top: 0;
-    width: 220px;
-    height: 100vh;
+    position: relative;        /* NOT fixed */
+    width: 100%;               /* full width on top */
+    height: auto;              /* adjust height */
     flex-direction: column;
     align-items: flex-start;
-    padding-top: 30px;
-    transition: left 0.3s ease;
-    z-index: 200;           /* above main content */
-  }
-
-  .navbar.show {
-    left: 0;                /* slide in navbar */
-  }
-
-  main {
-    margin-left: 0;         /* remove fixed margin for mobile */
-    padding: 20px;
-    transition: margin-left 0.3s ease;
-  }
-
-  main.shift {
-    margin-left: 220px;     /* push content when navbar is open */
+    padding: 15px 20px;
+    box-shadow: none;
   }
 
   #nav-toggle {
-    position: fixed;
-    left: 10px;
-    top: 15px;
-    z-index: 300;           /* above everything */
+    display: block;            /* show hamburger */
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    display: none;             /* hide links initially */
+    width: 100%;
+  }
+
+  .nav-links.show {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  main {
+    margin-left: 0;            /* remove desktop margin */
+    padding: 20px;
   }
 }
