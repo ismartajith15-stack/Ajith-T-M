@@ -400,3 +400,152 @@ body.no-anim .skill-fill {
     padding: 20px;
   }
 }
+#resume a {
+  display: block;
+  width: 250px;
+  margin: 20px auto;
+  padding: 18px 0;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+#resume a:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+/* SETTINGS SECTION BIG STYLE */
+#settings {
+  text-align: center;
+}
+
+#settings h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* Each setting box */
+#settings .setting-item {
+  background: #f4f4f4;
+  margin: 20px auto;
+  padding: 25px;
+  width: 300px;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Bigger toggle checkbox */
+#settings input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-right: 10px;
+}
+
+/* Bigger A+ A- buttons */
+#settings .small-btn {
+  padding: 12px 20px;
+  font-size: 18px;
+  margin: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#settings .small-btn:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+/* ========================= */
+/* DARK MODE FULL FIX */
+/* ========================= */
+
+.dark-mode {
+  background-color: #111 !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .navbar {
+  background-color: #000 !important;
+}
+
+.dark-mode .section {
+  background-color: #1a1a1a !important;
+}
+
+.dark-mode .accordion-content {
+  background-color: #222 !important;
+}
+
+.dark-mode a {
+  color: #00c8ff !important;
+}
+
+.dark-mode .home-btn {
+  background-color: #00c8ff !important;
+  color: #111 !important;
+}
+/* ========================= */
+/* COMPLETE DARK MODE FIX */
+/* ========================= */
+
+body.dark-mode {
+  background: #111 !important;
+  color: #fff !important;
+}
+
+body.dark-mode .section {
+  background: #1a1a1a !important;
+}
+
+body.dark-mode .section-container {
+  background: #222 !important;
+  color: #fff !important;
+}
+
+body.dark-mode .navbar {
+  background: #000 !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode label {
+  color: #fff !important;
+}
+
+body.dark-mode .setting-item {
+  background: #333 !important;
+}
+/* DARK MODE - Settings section */
+body.dark-mode .setting-item {
+  background: #222 !important;   /* dark card */
+  color: #fff !important;        /* white text */
+}
+
+body.dark-mode .setting-item label {
+  color: #fff !important;        /* white text for labels */
+
+}
+/* LIGHT MODE - Settings section */
+.setting-item {
+  background: #ffffff;   /* white card */
+  color: #111;           /* black text */
+  padding: 15px;         /* optional for spacing */
+  border-radius: 10px;   /* rounded corners */
+  margin-bottom: 15px;   /* spacing between items */
+}
+
+.setting-item label {
+  color: #111;           /* black text for labels */
+}
