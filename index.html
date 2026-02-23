@@ -30,32 +30,14 @@
   <li><a href="#projects">Projects</a></li>
   <li><a href="#internship">Internship</a></li>
   <li><a href="#contact">Contact</a></li>
-    <!-- Resume Dropdown -->
-    <li class="nav-dropdown">
-      <a href="#" id="resume-btn">Resume ▾</a>
-      <div class="dropdown-menu" id="resume-dropdown">
-        <a href="resume.pdf" target="_blank">View Resume</a>
-        <a href="resume.pdf" download>Download Resume</a>
-      </div>
-    </li>
-
-    <!-- Settings Dropdown -->
-    <li class="nav-dropdown">
-      <a href="#" id="settings-btn">Settings ▾</a>
-      <div class="dropdown-menu" id="settings-dropdown">
-        <button id="theme-toggle">Toggle Light/Dark</button>
-        <button id="font-small">Small Font</button>
-        <button id="font-medium">Medium Font</button>
-        <button id="font-large">Large Font</button>
-        <button id="anim-toggle">Toggle Animations</button>
-      </div>
-    </li>
-
+  <li><a href="#resume">Resume</a></li>
+   <li><a href="#settings">Settings</a></li>
+    
   </ul>
 </nav>
   <main>
     <!-- About Section -->
-    <section id="about" class="section section active slide-in">
+    <section id="about" class="section  slide-in">
       <div class="thunder-wrapper">
         <div class="piece piece-1">
         <img src="photo.jpg" alt="Ajith Photo" class="profile-img">
@@ -160,6 +142,43 @@
         <i class="fab fa-linkedin"></i> LinkedIn
       </a>
     </div>
+  </div>
+</section>
+<section id="resume" class="section fade-in">
+  <div class="section-container">
+    <h2>Resume</h2>
+    <a href="resume.pdf" target="_blank" class="home-btn">
+      View Resume
+    </a>
+    <a href="resume.pdf" download class="home-btn">
+      Download Resume
+    </a>
+  </div>
+</section>
+<section id="settings" class="section fade-in">
+  <div class="section-container">
+    <h2>Appearance Settings</h2>
+
+    <div class="setting-item">
+      <label>
+        <input type="checkbox" id="themeToggle">
+        Dark Mode
+      </label>
+    </div>
+
+    <div class="setting-item">
+      <span>Font Size:</span>
+      <button onclick="increaseFont()" class="small-btn">A+</button>
+      <button onclick="decreaseFont()" class="small-btn">A-</button>
+    </div>
+
+    <div class="setting-item">
+      <label>
+        <input type="checkbox" id="animationToggle" checked>
+        Enable Animations
+      </label>
+    </div>
+
   </div>
 </section>
 <script src="script.js"></script>
