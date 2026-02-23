@@ -5,6 +5,8 @@ aboutPieces.forEach(piece => {
     piece.classList.add("show");
   }, 100); // small delay before first piece
 });
+
+
   // =========================
   // SECTION SHOW/HIDE
   // =========================
@@ -52,70 +54,44 @@ aboutPieces.forEach(piece => {
     });
   });
 
-  // =========================
-  // DROPDOWN SYSTEM
-  // =========================
-  const resumeBtn = document.getElementById("resume-btn");
-  const resumeDropdown = document.getElementById("resume-dropdown");
-  const settingsBtn = document.getElementById("settings-btn");
-  const settingsDropdown = document.getElementById("settings-dropdown");
-
-  resumeBtn.addEventListener("click", e => {
-    e.preventDefault();
-    resumeDropdown.classList.toggle("show");
-    settingsDropdown.classList.remove("show");
-  });
-
-  settingsBtn.addEventListener("click", e => {
-    e.preventDefault();
-    settingsDropdown.classList.toggle("show");
-    resumeDropdown.classList.remove("show");
-  });
-
-  document.addEventListener("click", e => {
-    if (!e.target.closest(".nav-dropdown")) {
-      resumeDropdown.classList.remove("show");
-      settingsDropdown.classList.remove("show");
-    }
-  });
 
   // =========================
-  // THEME TOGGLE
-  // =========================
-  document.getElementById("theme-toggle").onclick = () => {
-    document.body.classList.toggle("light-theme");
-  };
-
-  // =========================
-  // FONT SIZE
-  // =========================
-  document.getElementById("font-small").onclick = () => document.body.style.fontSize = "14px";
-  document.getElementById("font-medium").onclick = () => document.body.style.fontSize = "16px";
-  document.getElementById("font-large").onclick = () => document.body.style.fontSize = "18px";
-
-  // =========================
-// ANIMATION TOGGLE FIX
+// SETTINGS FIXED VERSION
 // =========================
-const animToggle = document.getElementById("anim-toggle");
-if (animToggle) {
-  animToggle.addEventListener("click", function () {
+
+// Dark Mode
+const themeToggle = document.getElementById("themeToggle");
+if (themeToggle) {
+  themeToggle.addEventListener("change", function () {
+    document.body.classList.toggle("dark-mode");
+  });
+}
+
+// Font Size
+let currentFontSize = 16;
+
+window.increaseFont = function () {
+  currentFontSize += 2;
+  document.body.style.fontSize = currentFontSize + "px";
+};
+
+window.decreaseFont = function () {
+  currentFontSize -= 2;
+  document.body.style.fontSize = currentFontSize + "px";
+};
+
+// Animation Toggle
+const animationToggle = document.getElementById("animationToggle");
+
+if (animationToggle) {
+  animationToggle.addEventListener("change", function () {
     document.body.classList.toggle("no-anim");
 
-    const skills = document.querySelectorAll('.skill-fill');
+    const skills = document.querySelectorAll(".skill-fill");
 
     if (document.body.classList.contains("no-anim")) {
-      animToggle.textContent = "Animation OFF";
-      animToggle.style.background = "#ff4d4d";
-      animToggle.style.color = "#fff";
-      
-      // Disable transition
       skills.forEach(skill => skill.style.transition = "none");
     } else {
-      animToggle.textContent = "Animation ON";
-      animToggle.style.background = "#00c8ff";
-      animToggle.style.color = "#111";
-      
-      // Restore transition
       skills.forEach(skill => skill.style.transition = "width 1s ease-in-out");
     }
   });
@@ -138,9 +114,14 @@ if (animToggle) {
   });
 
 });
-const navToggle = document.getElementById("nav-toggle");
-const navLinks = document.querySelector(".nav-links");
+// =========================
+// MOBILE NAV TOGGLE FIX
+// =========================
+const navToggleBtn = document.getElementById("nav-toggle");
+const navMenu = document.querySelector(".nav-links");
 
-navToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-});
+if (navToggleBtn) {
+  navToggleBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
+}
